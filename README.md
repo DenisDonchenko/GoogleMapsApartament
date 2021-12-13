@@ -12,26 +12,30 @@ jdbc.url= &lt;your databse url here&gt;
 
 <br>2. Migration required (resources/db/migration/V1.0_init.sql)
 <pre>
-create TABLE if not exists `flat` (
-`id` int(11) not null,
-`rooms` int(11) not null,
-`square` double not null,
-`address`varchar(255) not null,
-`description` varchar(255) not null ,
-`coordinates_id` int(11) not null
+CREATE TABLE IF NOT EXISTS flat
+(
+    id             INT(11)      NOT NULL,
+    rooms          INT(11)      NOT NULL,
+    square         DOUBLE       NOT NULL,
+    address        VARCHAR(255) NOT NULL,
+    description    VARCHAR(255) NOT NULL,
+    coordinates_id INT(11)      NOT NULL
 );
 
-create table if not exists `photo` (
-`id` int(11) not null,
-`photo` longblob not null,
-`flat_id` int(11) not null
+CREATE TABLE IF NOT EXISTS photo
+(
+    id      INT(11)  NOT NULL,
+    photo   TINYBLOB NOT NULL,
+    flat_id INT(11)  NOT NULL
 );
 
-create table if not exists `coordinates` (
-`id` int(11) not null,
-`latitude` varchar(255) not null,
-`longitude` varchar(255) not null
+CREATE TABLE IF NOT EXISTS coordinates
+(
+    id        INT(11)      NOT NULL,
+    latitude  VARCHAR(255) NOT NULL,
+    longitude VARCHAR(255) NOT NULL
 )
+
 </pre>
 <h1>Usage</h1>
 Run the project through the IDE and head out to http://localhost:8080
