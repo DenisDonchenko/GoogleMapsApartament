@@ -39,3 +39,5 @@ Run the project through the IDE and head out to http://localhost:8080
 <h2>To add a new property, you need to click on the button "Add apartment", by clicking which will open the dialog for adding.</h2>
 
 <h2>To see the full information, you need to click on the label on the map.</h2>
+
+<h2>To hide full information, click on the same property</h2>
