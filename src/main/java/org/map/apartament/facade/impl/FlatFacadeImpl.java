@@ -1,6 +1,7 @@
 package org.map.apartament.facade.impl;
-
-import com.sun.org.apache.xerces.internal.impl.dv.util.Base64;
+/*
+import com.sun.org.apache.xerces.internal.impl.dv.util.Base64;*/
+import org.apache.commons.net.util.Base64;
 import org.map.apartament.facade.FlatFacade;
 import org.map.apartament.model.Coordinates;
 import org.map.apartament.model.Flat;
@@ -16,7 +17,6 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -73,7 +73,7 @@ public class FlatFacadeImpl implements FlatFacade {
 
     private Set<String> createEncodePhoto(Set<Photo> photoSet) {
         return photoSet.stream()
-                .map(photo -> Base64.encode(photo.getPhoto()))
+                .map(photo -> Base64.encodeBase64String(photo.getPhoto()))
                 .collect(Collectors.toSet());
     }
 
