@@ -1,6 +1,5 @@
 package org.map.apartament.facade.impl;
-/*
-import com.sun.org.apache.xerces.internal.impl.dv.util.Base64;*/
+
 import org.apache.commons.net.util.Base64;
 import org.map.apartament.facade.FlatFacade;
 import org.map.apartament.model.Coordinates;
